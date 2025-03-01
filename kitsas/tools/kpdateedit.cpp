@@ -351,7 +351,10 @@ void KpDateEdit::keyPressEvent(QKeyEvent *event)
 
     setCursorPosition(pos);
 
-    QLineEdit::keyPressEvent(event);
+    if(event->key() != Qt::Key_Up && event->key() != Qt::Key_Down) {
+        QLineEdit::keyPressEvent(event);
+    } 
+
     editMuuttui( text() );
 }
 
